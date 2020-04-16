@@ -26,6 +26,12 @@ class Movie
         @id = movie["id"].to_i
       end
 
+      def update()
+        sql = "UPDATE movies SET title = $1, genre = $2 WHERE id = $3"
+        values = [@title, @genre, @id]
+        SqlRunner.run( sql, values )
+      end
+
       def self.map_items(movie_data)
         result = movie_data.map { |movie| Movie.new(movie) }
         return result
