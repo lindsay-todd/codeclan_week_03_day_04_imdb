@@ -11,7 +11,7 @@ class Movie
     end
 
     def save()
-        sql = "INSERT INTO stars
+        sql = "INSERT INTO movies
         (
           title,
           genre
