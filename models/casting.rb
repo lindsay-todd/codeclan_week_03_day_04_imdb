@@ -28,6 +28,12 @@ class Casting
         @id = casting["id"].to_i
       end
 
+      def update()
+        sql = "UPDATE castings SET movie_id = $1, star_id = $2, fee = $3 WHERE id = $4"
+        values = [@movie_id, @star_id, @fee, @id]
+        SqlRunner.run( sql, values )
+      end
+
       def self.map_items(casting_data)
         result = casting_data.map { |casting| Casting.new(casting) }
         return result
