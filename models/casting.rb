@@ -29,7 +29,7 @@ class Casting
       end
 
       def self.map_items(casting_data)
-        result = casting_data.map { |movie| Casting.new(casting) }
+        result = casting_data.map { |casting| Casting.new(casting) }
         return result
       end
 
